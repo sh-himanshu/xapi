@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/5fd3f17301.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Static CSS -->
+    <link href="{{ url_for('static', path='/LoginPage.css') }}" rel="stylesheet" />
+    <!-- <link
+            href="/static/LoginPage.css"
+            rel="stylesheet"
+        /> -->
+    <title>Log in with Telegram</title>
+  </head>
+  <body>
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-white pb-5">
+          <i class="fas fa-key fa-xs"></i> Generate API Key
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <div class="d-flex justify-content-center">
+            <script
+              async
+              src="https://telegram.org/js/telegram-widget.js?15"
+              data-telegram-login="xcaptchabot"
+              data-size="large"
+              data-auth-url="https://xapi-v1.herokuapp.com/telegram"
+              data-request-access="write"
+            ></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

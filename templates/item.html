@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet" />
+    <meta property="og:image" content="https://i.imgur.com/XsaLqi1.jpg" />
+
+    <meta
+      property="og:description"
+      content="Coaches share their secrets to success so you can rock 2015. Join us for this inspiring, rejuvenating, motivating look at what secret sauce these coaches use to succeed in their business. This is for coaches of any level that are committed to changing the world. You will be elevated both in your life and your coaching business. Check out the topics below, there is something for everyone."
+    />
+
+    <meta property="og:url" content="https://github.com/code-rgb/" />
+
+    <meta property="og:title" content="Coaches Wisdom Telesummit" />
+  </head>
+  <body>
+    <script
+      async
+      src="https://telegram.org/js/telegram-widget.js?15"
+      data-telegram-login="xcaptchabot"
+      data-size="large"
+      data-auth-url="https://xapi-v1.herokuapp.com/telegram"
+      data-request-access="write"
+    ></script>
+    <h1>Item ID: {{ id }}</h1>
+  </body>
+</html>

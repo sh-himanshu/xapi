@@ -1,0 +1,30 @@
+name: Poetry Lock and Code format
+
+on: push
+
+jobs:
+  Lock_and_Format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Code Format
+        run: bash code.sh
+      - name: Check lock file
+        run: |
+          if ! [[ -f "poetry.lock" ]]; then
+              pip install poetry
+              poetry update
+              poetry export -f requirements.txt --output requirements.txt
+          fi
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "auto: code format"
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: code-rgb
+          commit_user_email: 62891774+code-rgb@users.noreply.github.com
+          commit_author: code-rgb <62891774+code-rgb@users.noreply.github.com>
